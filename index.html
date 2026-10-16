@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>أفضل أوقات الصيد</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#eef6f9;--card:#fff;--tx:#0f2c3a;--mut:#5b7886;--bd:#d3e3ea;--pri:#0b6e8a;--gold:#e8a900;
+--hk:#1f9e66;--fs:#2f74dc;--hs:#10a9a0;--fk:#7d57cf;--hi:#2f74dc;--lo:#10a9a0;--sh:0 6px 18px rgba(11,70,100,.10)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#08151c;--card:#102431;--tx:#e6f2f7;--mut:#8fa9b6;--bd:#21404f;--pri:#4cc2e0;--gold:#f5c534;--hk:#3fd08e;--fs:#6fa2f5;--hs:#3cd6cb;--fk:#ab8ff2;--hi:#6fa2f5;--lo:#3cd6cb;--sh:0 6px 18px rgba(0,0,0,.35)}}
+:root[data-theme="dark"]{--bg:#08151c;--card:#102431;--tx:#e6f2f7;--mut:#8fa9b6;--bd:#21404f;--pri:#4cc2e0;--gold:#f5c534;--hk:#3fd08e;--fs:#6fa2f5;--hs:#3cd6cb;--fk:#ab8ff2;--hi:#6fa2f5;--lo:#3cd6cb;--sh:0 6px 18px rgba(0,0,0,.35)}
+*{box-sizing:border-box}
+html{background:var(--bg);scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--tx);font-family:"Cairo","Segoe UI",Tahoma,Arial,sans-serif;line-height:1.7}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:#0a4468;z-index:10}
+.wrap{max-width:640px;margin:0 auto;padding:0 14px 8px}
+/* hero */
+header{position:relative;overflow:hidden;color:#fff;text-align:center;
+background:radial-gradient(circle at 80% 15%,rgba(255,220,140,.35),transparent 40%),linear-gradient(180deg,#0a4468 0%,#0d7a9c 60%,#19a5b8 100%);
+padding:calc(env(safe-area-inset-top,0px) + 22px) 16px 70px}
+header h1{margin:6px 0 2px;font-size:28px;font-weight:800;text-shadow:0 2px 8px rgba(0,0,0,.25)}
+header .sub{opacity:.9;font-size:14px}
+.chip{display:inline-block;margin-top:10px;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.35);backdrop-filter:blur(6px);padding:4px 16px;border-radius:99px;font-weight:600}
+.hook{position:absolute;top:0;inset-inline-start:22px;width:30px;opacity:.85}
+.fishA{position:absolute;width:46px;fill:rgba(255,255,255,.75);top:46%;animation:swim 14s linear infinite}
+.fishB{width:30px;top:68%;animation-duration:20s;animation-delay:-7s;opacity:.5}
+@keyframes swim{from{inset-inline-start:-60px}to{inset-inline-start:105%}}
+.bub{position:absolute;bottom:20px;width:8px;height:8px;border-radius:50%;border:1.5px solid rgba(255,255,255,.6);animation:up 6s ease-in infinite}
+@keyframes up{to{transform:translateY(-120px);opacity:0}}
+.waves{position:absolute;bottom:-1px;left:0;width:200%;height:46px;animation:wv 9s linear infinite}
+.waves.w2{height:38px;opacity:.55;animation-duration:14s;animation-direction:reverse}
+@keyframes wv{to{transform:translateX(-50%)}}
+.waves path{fill:var(--bg)}
+@media (prefers-reduced-motion:reduce){.fishA,.waves,.bub{animation:none}}
+/* cards */
+.card{background:var(--card);border:1px solid var(--bd);border-radius:18px;padding:16px;margin:14px 0;box-shadow:var(--sh)}
+h2{font-size:18px;margin:0 0 10px;font-weight:800}
+.mut{color:var(--mut);font-size:13px}
+.up{margin-top:-34px;position:relative;z-index:2}
+.ctl{display:flex;gap:6px;align-items:center;flex-wrap:wrap;justify-content:center}
+.btn{border:1px solid var(--bd);background:var(--card);color:var(--tx);border-radius:10px;padding:2px 14px;font:inherit;cursor:pointer}
+.hero{border-top:6px solid var(--c);background:linear-gradient(180deg,color-mix(in srgb,var(--c) 14%,var(--card)),var(--card) 60%)}
+.badge{display:inline-block;padding:3px 16px;border-radius:99px;background:var(--c);color:#fff;font-weight:800;font-size:17px}
+.gold{margin:10px 0;padding:8px 12px;border-radius:12px;background:linear-gradient(90deg,#f7c948,#e8a900);color:#4a3200;font-weight:800;display:flex;gap:8px;align-items:center}
+.row{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:8px 0;border-bottom:1px dashed var(--bd)}
+.row:last-child{border:0}
+.dots i{display:inline-block;width:11px;height:11px;border-radius:50%;background:var(--bd);margin-inline-start:3px}
+.dots i.on{background:var(--c)}
+.grid{display:grid;grid-template-columns:repeat(6,1fr);gap:7px}
+.d{position:relative;border:2px solid var(--c);border-radius:12px;padding:8px 0;text-align:center;background:transparent;color:var(--tx);font:inherit;font-weight:800;cursor:pointer}
+.d.best{background:var(--c);color:#fff}
+.d.best::after{content:"★";position:absolute;top:-3px;left:4px;font-size:11px;color:var(--gold)}
+.d.sel{outline:3px solid var(--tx);outline-offset:2px}
+.d.today{box-shadow:0 0 0 3px var(--gold)}
+.leg{display:flex;flex-wrap:wrap;gap:6px 12px;font-size:12px;margin-top:12px}
+.leg i{display:inline-block;width:10px;height:10px;border-radius:3px;background:var(--c);margin-inline-end:4px}
+.ev{display:flex;gap:12px;align-items:center;margin-top:10px;padding:10px 12px;border-radius:14px;background:var(--bg);border-inline-start:5px solid var(--c)}
+.ev .ic{font-size:26px}
+.ev b{font-size:16px}
+.pill{display:inline-block;margin-top:2px;padding:1px 10px;border-radius:99px;background:var(--c);color:#fff;font-size:13px}
+.tides{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+label{font-size:13px;color:var(--mut);display:block}
+input[type=time],input[type=date]{width:100%;padding:8px;border:1px solid var(--bd);border-radius:10px;background:var(--bg);color:var(--tx);font:inherit}
+details{margin-top:12px;padding:10px 12px;border:1px solid var(--bd);border-radius:12px}
+summary{cursor:pointer;font-weight:600}
+.big{font-size:22px;font-weight:800;letter-spacing:.5px}
+.top3{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+.top3 span{background:var(--pri);color:#fff;border-radius:10px;padding:1px 10px;font-weight:800}
+footer{margin-top:26px;padding:40px 16px calc(22px + env(safe-area-inset-bottom,0px));text-align:center;color:#fff;position:relative;
+background:linear-gradient(180deg,#0d7a9c,#0a4468)}
+footer svg.top{position:absolute;top:-1px;left:0;width:100%;height:30px;transform:scaleY(-1)}
+footer svg.top path{fill:var(--bg)}
+footer .nm{font-family:Georgia,"Times New Roman",serif;font-size:20px;letter-spacing:1.5px;direction:ltr;font-weight:700}
+footer .fi{width:42px;fill:#fff;opacity:.9;margin-bottom:2px}
+</style>
+</head>
+<body>
+<header>
+  <svg class="hook" viewBox="0 0 30 150" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round"><path d="M15 0v108"/><path d="M15 108c0 22 20 22 20 4"/><path d="M33 112l-5-8"/></svg>
+  <svg class="fishA" viewBox="0 0 64 32"><path d="M2 16C14 2 38 2 50 16 38 30 14 30 2 16Z"/><path d="M50 16l12-10v20z"/></svg>
+  <svg class="fishA fishB" viewBox="0 0 64 32"><path d="M2 16C14 2 38 2 50 16 38 30 14 30 2 16Z"/><path d="M50 16l12-10v20z"/></svg>
+  <span class="bub" style="inset-inline-start:30%;animation-delay:0s"></span>
+  <span class="bub" style="inset-inline-start:62%;animation-delay:2s"></span>
+  <span class="bub" style="inset-inline-start:78%;animation-delay:4s"></span>
+  <div style="font-size:42px;position:relative">🎣</div>
+  <h1>أفضل أوقات الصيد</h1>
+  <div class="sub">حسب الشهر الهجري · المد والجزر · الخبر</div>
+  <div class="chip" id="today"></div>
+  <svg class="waves w2" viewBox="0 0 1200 40" preserveAspectRatio="none"><path d="M0 20Q75 0 150 20T300 20T450 20T600 20T750 20T900 20T1050 20T1200 20V40H0Z"/></svg>
+  <svg class="waves" viewBox="0 0 1200 40" preserveAspectRatio="none"><path d="M0 24Q100 4 200 24T400 24T600 24T800 24T1000 24T1200 24V40H0Z"/></svg>
+</header>
+
+<div class="wrap">
+<div class="card hero up" id="hero"></div>
+
+<div class="ctl mut"><span>تعديل اليوم الهجري حسب رؤية الهلال:</span><button class="btn" id="minus">−١</button><button class="btn" id="plus">+١</button></div>
+
+<div class="card">
+  <h2>📅 أيام الشهر الهجري</h2>
+  <div class="grid" id="grid"></div>
+  <div class="leg">
+    <span style="--c:var(--hk)"><i></i>حمل كبير</span>
+    <span style="--c:var(--fs)"><i></i>فساد صغير</span>
+    <span style="--c:var(--hs)"><i></i>حمل صغير</span>
+    <span style="--c:var(--fk)"><i></i>فساد كبير</span>
+    <span><b style="color:var(--gold)">★</b> أفضل الأيام</span>
+  </div>
+</div>
+
+<div class="card">
+  <h2>🌊 المد والجزر</h2>
+  <div class="mut">تُحسب تلقائياً لليوم المحدد، وهي تقدير تقريبي يُضبط من وقت لآخر.</div>
+  <div id="wins"></div>
+  <div class="mut" style="margin-top:10px">🕐 <b>نزلت الموية</b>: بعد أعلى مد بساعة وتستمر ساعتين.<br>🕐 <b>رشة الموية</b>: بعد أدنى جزر بساعة وتستمر ساعتين.</div>
+  <details id="cal">
+    <summary>⚙️ ضبط المنطقة</summary>
+    <div class="mut" style="margin:6px 0">أدخل أوقات الجزر والمد الأربعة ليوم واحد من تطبيق أو جدول (مضبوطة مسبقاً على الخبر).</div>
+    <div class="tides">
+      <div style="grid-column:1/-1"><label>التاريخ</label><input type="date" id="rd"></div>
+      <div><label>جزر 1</label><input type="time" id="rt"></div><div><label>مد 1</label><input type="time" id="rt2"></div>
+      <div><label>جزر 2</label><input type="time" id="rt3"></div><div><label>مد 2</label><input type="time" id="rt4"></div>
+    </div>
+    <button class="btn" id="save" style="margin-top:10px;padding:6px 20px">حفظ</button>
+  </details>
+</div>
+
+<div class="card">
+  <h2>🏆 أفضل أيام الصيد من الشاطئ</h2>
+  <div class="big">٣ · ٤ · ٧ · ١٠ · ١١ · ١٢ · ١٧ · ١٨ · ٢٢ · ٢٥ · ٢٦ · ٢٧</div>
+  <div class="mut">نسبة الصيد فيها تتعدى ٨٠٪</div>
+</div>
+</div>
+
+<footer>
+  <svg class="top" viewBox="0 0 1200 40" preserveAspectRatio="none"><path d="M0 24Q100 4 200 24T400 24T600 24T800 24T1000 24T1200 24V40H0Z"/></svg>
+  <svg class="fi" viewBox="0 0 64 32"><path d="M2 16C14 2 38 2 50 16 38 30 14 30 2 16Z"/><path d="M50 16l12-10v20z"/></svg>
+  <div class="nm">khalid alzahrani</div>
+</footer>
+
+<script>
+const P=[
+ {n:'حمل كبير',days:[1,2,3,4],best:[3,4],sv:4,bv:3,shore:'أفضل من القارب',boat:'جيد',tip:'الصيد من الشاطئ أفضل من القارب.',c:'var(--hk)'},
+ {n:'فساد صغير',days:[5,6,7,8,9,10,11],best:[7,10,11],sv:3,bv:5,shore:'جيد',boat:'ممتاز جداً',tip:'الصيد من القارب أفضل من الشاطئ.',c:'var(--fs)'},
+ {n:'حمل صغير',days:[12,13,14,15,16,17,18,19],best:[12,17,18],sv:5,bv:3,shore:'ممتاز جداً',boat:'جيد',tip:'الصيد من الشاطئ ممتاز جداً.',c:'var(--hs)'},
+ {n:'فساد كبير',days:[20,21,22,23,24,25,26],best:[22,25,26],sv:3,bv:4,shore:'جيد',boat:'ممتاز',tip:'الصيد من القارب ممتاز.',c:'var(--fk)'},
+ {n:'حمل كبير',days:[27,28,29,30],best:[27],sv:4,bv:3,shore:'ممتاز',boat:'جيد',tip:'الصيد من الشاطئ ممتاز.',c:'var(--hk)'}
+];
+const N=n=>n.toLocaleString('ar-SA');
+const ph=d=>P.find(p=>p.days.includes(d));
+const dots=(v,c)=>`<span class="dots" style="--c:${c}">${[1,2,3,4,5].map(i=>`<i class="${i<=v?'on':''}"></i>`).join('')}</span>`;
+let adj=0,hij=1,sel=1;
+try{hij=+new Intl.DateTimeFormat('en-u-ca-islamic-umalqura',{day:'numeric'}).formatToParts(new Date()).find(x=>x.type==='day').value}catch(e){hij=1}
+const mon=(()=>{try{return new Intl.DateTimeFormat('ar-SA-u-ca-islamic-umalqura',{month:'long',year:'numeric'}).format(new Date())}catch(e){return''}})();
+function cur(){let d=hij+adj;return d<1?30:d>30?1:d}
+function render(){
+  const t=cur();
+  document.getElementById('today').textContent=N(t)+' '+mon;
+  const g=document.getElementById('grid');g.innerHTML='';
+  for(let d=1;d<=30;d++){const p=ph(d),b=document.createElement('button');
+    b.className='d'+(p.best.includes(d)?' best':'')+(d===sel?' sel':'')+(d===t?' today':'');
+    b.style.setProperty('--c',p.c);b.textContent=N(d);b.onclick=()=>{sel=d;render()};g.appendChild(b)}
+  const p=ph(sel),best=p.best.includes(sel);
+  const h=document.getElementById('hero');h.style.setProperty('--c',p.c);
+  h.innerHTML=`<div class="mut">${sel===t?'اليوم':'يوم'} ${N(sel)} من الشهر الهجري</div>
+  <div style="margin:4px 0"><span class="badge">${p.n}</span></div>
+  ${best?'<div class="gold">🐟 ★ من أفضل أيام الصيد</div>':''}
+  <div style="margin:6px 0 4px">${p.tip}</div>
+  <div class="row"><span>🏖️ من الشاطئ</span><span>${dots(p.sv,p.c)} <b>${p.shore}</b></span></div>
+  <div class="row"><span>🚤 من القارب</span><span>${dots(p.bv,p.c)} <b>${p.boat}</b></span></div>
+  <div class="row"><span>⭐ أفضل أيام الفترة</span><span class="top3">${p.best.map(x=>'<span>'+N(x)+'</span>').join('')}</span></div>`;
+  tide();
+}
+document.getElementById('minus').onclick=()=>{adj--;sel=cur();render()};
+document.getElementById('plus').onclick=()=>{adj++;sel=cur();render()};
+function fmt(m){m=Math.round(((m%1440)+1440)%1440);let h=Math.floor(m/60),mi=m%60,s=h>=12?'م':'ص';h=h%12||12;return N(h)+':'+String(mi).padStart(2,'0').replace(/\d/g,x=>N(+x))+' '+s}
+let mem=null;
+const DEF=['2026-10-16T02:01:00+03:00','2026-10-16T07:53:00+03:00','2026-10-16T14:33:00+03:00','2026-10-16T21:06:00+03:00'];
+function getRef(){try{const v=localStorage.getItem('fishRef2');if(v)return JSON.parse(v)}catch(e){}return mem||DEF}
+function tide(){
+  const w=document.getElementById('wins'),r=getRef();
+  const LD=1490.5,refs=r.map((x,i)=>({m:new Date(x).getTime()/60000,h:i%2}));
+  const d0=new Date();d0.setHours(0,0,0,0);d0.setDate(d0.getDate()+(sel-cur()));
+  const s=d0.getTime()/60000,e=s+1440,ev=[];
+  refs.forEach(f=>{for(let k=Math.floor((s-f.m)/LD)-1;k<=Math.ceil((e-f.m)/LD)+1;k++){const t=f.m+k*LD;if(t>=s&&t<e)ev.push({t:t-s,h:f.h})}});
+  ev.sort((a,b)=>a.t-b.t);
+  w.innerHTML=ev.map(x=>{const c=x.h?'var(--hi)':'var(--lo)';return `<div class="ev" style="--c:${c}"><div class="ic">${x.h?'🌊':'💦'}</div><div><b>${x.h?'أعلى مد':'أدنى جزر'} · ${fmt(x.t)}</b><br><span class="pill">${x.h?'نزلت الموية':'رشة الموية'}: ${fmt(x.t+60)} ← ${fmt(x.t+180)}</span></div></div>`}).join('');
+}
+const rd=document.getElementById('rd');
+rd.value=new Date(Date.now()-new Date().getTimezoneOffset()*60000).toISOString().slice(0,10);
+document.getElementById('save').onclick=()=>{
+  const ids=['rt','rt2','rt3','rt4'];
+  if(!rd.value||ids.some(i=>!document.getElementById(i).value))return;
+  mem=ids.map(i=>new Date(rd.value+'T'+document.getElementById(i).value).toISOString());
+  try{localStorage.setItem('fishRef2',JSON.stringify(mem))}catch(e){}
+  document.getElementById('cal').open=false;tide();
+};
+sel=cur();render();
+</script>
+</body>
+</html>
